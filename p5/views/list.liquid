@@ -1,0 +1,11 @@
+{% layout 'default-layout.liquid' %}
+
+<ul>
+    {% for r in rows %}
+        <li>Link: {{ r.link }} ID: <a href = "{{ r.link }}">{{ r.id }} </a></li>
+        <form action="/delete-link" method="POST">
+            <input type="hidden" name="linkToDel" value="{{ r.link }}">
+            <button type="submit">Удалить</button>
+        </form>
+    {% endfor %}
+</ul>

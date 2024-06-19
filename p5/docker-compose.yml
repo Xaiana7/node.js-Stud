@@ -1,0 +1,27 @@
+version: '3.0'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      DB_USER: 'postgres'
+      DB_PASSWORD: 'xaiana123'
+      DB_HOST: "db"
+      DB_PORT: 5432
+      DB_NAME: 'node_postgres'
+    depends_on:
+      - db
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'xaiana123'
+      POSTGRES_DB: 'node_postgres'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
