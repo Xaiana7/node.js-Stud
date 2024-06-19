@@ -1,0 +1,7 @@
+{% layout "default-layout.liquid" %}
+<h1>Information</h1>
+<h2>Welcome! Your login is {{ result }}. <br> Your role is {{ role }} </h2>
+
+<br><form action="/logout" method="POST">
+    <input type="submit" value="Logout">
+</form>

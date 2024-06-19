@@ -1,0 +1,16 @@
+{% layout 'default-layout.liquid' %}
+<h1>Information list</h1>
+<h2>
+  Welcome, Admin. <br>
+  Users list:
+</h2>
+  <ul>
+    {% for item in result %}
+      <li><b>Username:</b> {{ item.username }}. <b>Password:</b> {{ item.password }}. <b>Role:</b> {{ item.role }}.</li>
+    {% endfor %}
+  </ul>
+
+
+<form action="/logout" method="POST">
+  <input type="submit" value="Logout">
+</form>
