@@ -1,0 +1,13 @@
+{% layout 'default-layout.liquid' %}
+<h2>Welcome, {{ name }}</h2>
+
+<form action="/submit-link" method="POST">
+  <label for="link">Введите ссылку:</label>
+  <input type="text" id="link" name="link" required>
+  <button type="submit">Отправить</button>
+</form>
+
+<br><form action="/logout" method="POST">
+  <input type="submit" value="Logout">
+</form>
+
